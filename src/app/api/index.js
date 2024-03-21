@@ -5,8 +5,7 @@ const axios = require("axios");
 export const postCallingAPI = async (data,pageName) => {
     var token = '';
     if (typeof window !== "undefined") {
-       token = sessionStorage.getItem("JSESSIONID");
-       console.log("token", token)
+       token = "A9F21C76B8C57F1FD3ABAE538F392AFF70ED2EC0DC185790B775640D513D60C7";
     }
     
     const originUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
@@ -34,8 +33,7 @@ export const postAPIFormData = async (data,pageName) => {
     
     var token = '';
     if (typeof window !== "undefined") {
-       token = sessionStorage.getItem("JSESSIONID");
-       console.log("token", token)
+       token = "A9F21C76B8C57F1FD3ABAE538F392AFF70ED2EC0DC185790B775640D513D60C7";
     }
     
     const originUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
