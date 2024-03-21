@@ -6,8 +6,11 @@
 
 html,
 body {
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
+}
+.textformat{
+ overflow-x: auto;
 }
 
 body {
@@ -15,9 +18,7 @@ body {
   background: rgb(var(--background-body)) !important;
   color: rgb(var(--black));
 }
-.textformat{
-  overflow-x: auto;
- }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -95,6 +96,7 @@ body .upload-preview-box img {
   width: 30px;
   height: 30px;
 }
+
 /* Sidebar */
 #nav {
   overflow-y: auto;

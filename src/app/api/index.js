@@ -1,21 +1,24 @@
 const axios = require("axios");
 
+if (typeof window !== "undefined") {
+  var token = sessionStorage.getItem("JSESSIONID");
+}
+// const originUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+const originUrl = "https://mbx-staging.getmagicbox.com"
+const headers = {
+  "JSESSION-ID": "C9642077CF8C936C217F4D30E926138AB1F762CCFA5B67B696C0A7F26E0F8700",
+  "Tenant-URL": `${originUrl}`
+};
+
+
+
+const multipartHeader = {
+  ...headers,
+  "Content-Type":"multipart/form-data"
+};
 
 //Post Form Data
 export const postCallingAPI = async (data,pageName) => {
-    var token = '';
-    if (typeof window !== "undefined") {
-       token = sessionStorage.getItem("JSESSIONID");
-       console.log("token", token)
-    }
-    
-    const originUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
-    
-    const headers = {
-      "JSESSION-ID": `${token}`,
-      "Tenant-URL": `${originUrl}`,
-    };
-    
   return axios
     .post(`${process.env.NEXT_PUBLIC_API_URL}`+ pageName, data, {
       headers,
@@ -31,25 +34,7 @@ export const postCallingAPI = async (data,pageName) => {
 
 // it should only call for when body is passed as a form-data/multipart
 export const postAPIFormData = async (data,pageName) => {
-    
-    var token = '';
-    if (typeof window !== "undefined") {
-       token = sessionStorage.getItem("JSESSIONID");
-       console.log("token", token)
-    }
-    
-    const originUrl = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
-    
-    const headers = {
-      "JSESSION-ID": `${token}`,
-      "Tenant-URL": `${originUrl}`,
-    };
-    
-    const multipartHeader = {
-      ...headers,
-      "Content-Type":"multipart/form-data"
-    };
-    
+  console.log(multipartHeader);
   return axios
     .post(`${process.env.NEXT_PUBLIC_API_URL}`+ pageName, data, {
       headers:multipartHeader,

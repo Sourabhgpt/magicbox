@@ -1,6 +1,6 @@
 import { useState } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { Box, Typography, Grid, Button, IconButton } from "@mui/material";
+import { Box, Typography, Grid, Button, IconButton, Hidden } from "@mui/material";
 import styled from "@emotion/styled";
 import CloseIcon from "@mui/icons-material/Close";
 import { Formik } from "formik";
@@ -81,7 +81,7 @@ const ConvertImagetoText = () => {
                       formData.append("image", fileUrl);
                       formData.append("tenant_id", 1);
                       const data = await postAPIFormData(values,"ImgtoText");
-                      console.log(data);
+                      
                       if (data?.code === 200) {
                       setResult(data?.response);
                     }
@@ -210,12 +210,13 @@ const ConvertImagetoText = () => {
             </Grid>
             <Grid item xs={12}>
               <Box p={2}>
-                <Box minHeight="25vh" className="result-box">
+                <Box>
                   {result && result ? (
                     <>
                       <Typography mb={2} fontWeight={600}>
                         AI generated result
                       </Typography>
+                      
                       <div className="textformat" dangerouslySetInnerHTML={{__html:marked.parse(result)}}/>
                     </>
                   ) : (

@@ -62,11 +62,10 @@ const CreateTestPaper = () => {
                   try {
                     const data = await postCallingAPI(values,"GenAssessment");
                     console.log(data?.response);
-                    if (data?.code === 200) {
-                      setResult(data?.response);
-                    }
-                    else if (data?.response?.data?.code === 401) {
+                    if (data?.response?.data?.code === 401) {
                       window.location.href = window.location.origin+"/login.htm?tenant=Magic";
+                    } else if (data?.code === 200) {
+                      setResult(data?.response);
                     }
                   } catch (error) {
                     console.log(error);
@@ -122,7 +121,7 @@ const CreateTestPaper = () => {
                             onChange={handleChange}
                             required
                             name="objective"
-                            size="small"                 
+                            size="small"                  
                             sx={{ border: 0, outline: "none" }}
                           />
                           </FormControl>
@@ -238,7 +237,7 @@ const CreateTestPaper = () => {
                       </Typography>
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: result?.replaceAll("\n", "</br>"),
+                          __html: result?.replaceAll("\n\n", "</br></br>"),
                         }}
                       />
                     </>

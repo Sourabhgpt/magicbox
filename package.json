@@ -25,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
+    "tesseract.js": "^5.0.5",
     "yup": "^1.2.0"
   },
   "devDependencies": {

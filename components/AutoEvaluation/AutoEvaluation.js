@@ -53,11 +53,10 @@ const AutoEvaluation = () => {
               try {
                 const data = await postCallingAPI(values,"getGrading");
                 console.log(data);
-                if (data?.code === 200) {
-                      setResult(data?.response);
-                    }
-                    else if (data?.response?.data?.code === 401) {
+                if (data?.code === 401) {
                       window.location.href = window.location.origin+"/login.htm?tenant=Magic";
+                    } else if (data?.code === 200) {
+                      setResult(data?.response);
                     }
               } catch (error) {
                 console.log(error);

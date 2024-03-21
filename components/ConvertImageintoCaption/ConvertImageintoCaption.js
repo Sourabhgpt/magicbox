@@ -86,7 +86,7 @@ const ConvertImageintoCaption = () => {
                       setResult(data?.response);
                     }
                     else if (data?.response?.data?.code === 401) {
-                      window.location.href = window.location.origin+"/login.htm?tenant=Magic";
+                      // window.location.href = window.location.origin+"/login.htm?tenant=Magic";
                     }
                     } catch (error) {
                       console.log(error);
@@ -186,6 +186,22 @@ const ConvertImageintoCaption = () => {
                         <Box></Box>
                         <Box>
                           <Button
+                            variant="outlined"
+                            sx={{
+                              color: "#5c15e7",
+                              border: "0 !important",
+                              textTransform: "capitalize",
+                              outline: "none",
+                            }}
+                            onClick={() => {
+                              resetForm();
+                              setFileUrl(null);
+                              setResult(null);
+                            }}
+                          >
+                            Reset
+                          </Button>
+                          <Button
                             variant="filled"
                             sx={{
                               color: "#fff",
@@ -199,7 +215,7 @@ const ConvertImageintoCaption = () => {
                             type="submit"
                             disabled={isSubmitting}
                           >
-                            Generate Text
+                            Generate
                           </Button>
                         </Box>
                       </Box>

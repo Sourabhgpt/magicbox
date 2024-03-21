@@ -115,7 +115,7 @@ const ListData = [
   {
     icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/text-icon.svg`,
     label: "Convert Image to Title",
-    subtitle: "Providing name to Image file",
+    subtitle: "Providing name to doc file",
     link: "/edu-ai-skills/convert-doc-file-in-title",
     user_type: [
       {
@@ -128,7 +128,7 @@ const ListData = [
   },
   {
     icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/summarization-icon.svg`,
-    label: "Create summary",
+    label: "Create Outline of Description",
     subtitle: "Concise rephrasing",
     link: "/edu-ai-skills/create-outline-of-description",
     user_type: [
@@ -142,7 +142,7 @@ const ListData = [
   },
   {
     icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/keywords-icon.svg`,
-    label: "Auto Keywords",
+    label: "Create Meaningful Search Term",
     subtitle: "Extract from Description",
     link: "/edu-ai-skills/create-meaningful-search-term",
     user_type: [
@@ -190,7 +190,7 @@ const ListData = [
   },
   {
     icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/assessment-icon.svg`,
-    label: "Create Test/Assessment",
+    label: "Create Test Paper",
     subtitle: "With Answer & Logics",
     link: "/edu-ai-skills/create-test-paper",
     user_type: [
@@ -206,7 +206,7 @@ const ListData = [
     ],
   },
   {
-    icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/image-icon.svg`,
+    icon: `${process.env.NEXT_PUBLIC_BASE_URL}/img/icon/assessment-icon.svg`,
     label: "Convert Image to Text",
     subtitle: "Extracting Text from Image",
     link: "/edu-ai-skills/convert-image-to-text",
